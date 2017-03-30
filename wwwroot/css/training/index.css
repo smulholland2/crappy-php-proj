@@ -1,0 +1,27 @@
+.form-header {
+    height: 70px;
+    background-color: #1E2B41;;
+    color: white;
+    border-radius: 4px;
+}
+.form-header span {
+    text-align: center;
+    display: block;
+    font-size: 54px;
+    line-height: 68px;
+}
+.submit {
+    height:60px;
+    font-size:28px;
+}
+.browser-icon {
+    height:50px;
+    width:50px;
+}
+.modal-body {
+    overflow:auto;
+}
+.modal-body a {
+    font-size:22px;
+    margin-bottom:5px;
+}

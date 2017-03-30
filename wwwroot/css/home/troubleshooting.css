@@ -1,0 +1,26 @@
+.faq {
+    cursor: pointer;
+}
+/*.faq h5 {
+    color:#337ab7;
+}*/
+.faq:hover {
+    background:grey;
+    color:white !important;
+}
+.faq h5:hover {
+    color:white;
+}
+.well li {
+    padding-bottom: 10px;
+}
+/* OVERRIDE BOOTSTRAP LIST GROUP STYLES */
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 0;
+    color: #fff;
+    background-color: #1E2B41;
+    border-color: #1E2B41;
+}
+.faq > .well {
+    color:black !important;
+}

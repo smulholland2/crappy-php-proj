@@ -1,0 +1,407 @@
+<html>
+<head>
+	<title>Jurisdiction Report Results</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="scripts/results.js"></script>
+
+
+<style>
+@media print {
+
+#changedatesbtn, #gobackbtn, #printpagebtn{ 
+	display: none; 
+}
+
+}
+	
+	table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 2px;
+  max-width: 170px;
+  text-overflow: ellipsis; 
+	overflow: hidden; 
+	white-space:nowrap;
+  font-size:9px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #E0FFFF;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+    background-color: yellow;
+}
+
+P{font-size:9px}
+
+</style>
+
+
+
+<script>	
+$(document).ready(function(){
+
+ 	 $("#hideBCbtn").click(function(){
+ 	 $("#btnGB").toggle();
+ 	 });
+
+});	
+
+function PrintPage() {
+    window.print();
+}
+</script>
+	
+	
+</head>
+<body ng-app="myApp" ng-controller="customersCtrl">
+
+<br>
+
+<p style="text-align:center" id="hideBCbtn">TAP Series Jurisdiction Report</p>
+<p style="text-align:center">Report Date: <span style="color:red">{{names[0].StartDate}}</span> - <span style="color:red">{{names[0].EndDate}}</span>.</p>
+
+<table ng-show="mainTable" class="table table-hover" style="width:800px; margin:auto">
+			<tr>
+				<th>Jurisdiction</th>
+				<th>Number</th>
+				<!--<th>Total</th>-->
+				<th>Type</th>
+				<th>Commission</th>
+				<th>Fee</th>
+				<th>Total</th>
+				
+
+			</tr>
+
+
+			<!--<tr ng-repeat="s in names | orderBy:mainOrder | unique:'CompanyName'| filter: globalSearch" ng-show="true">-->
+						
+			
+	
+
+			<tr>				
+				<td ng-click="optionFilter('WVBA', false, true, false, 'Barbour County, WV', true, false, false)"><a href="#">Barbour County, WV</a></td>
+				<td>{{count('WVBA')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVBA')*10 | currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVBA')*9.95 | currency}}</td>
+			</tr>
+			
+			<tr>				
+				<td ng-click="optionFilter('UTBR', false, true, false, 'Bear River, UT', true, true, false)"><a href="#">Bear River, UT</a></td>
+				<td>{{count('UTBR')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTBR')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTBR')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('CASD', false, true, false, 'County of San Diego, CA', true, false, false)"><a href="#">County of San Diego, CA - no print</a></td>
+				<td>{{count('CASD')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('CASD')*3 | currency}}</td>
+				<td>$3.00</td>
+				<td>{{count('CASD')*3 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTCU', false, true, false, 'Central, UT', true, true, false)"><a href="#">Central, UT</a></td>
+				<td>{{count('UTCU')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTCU')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTCU')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTDA', false, true, false, 'Davis, UT', true, true, false)"><a href="#">Davis, UT</a></td>
+				<td>{{count('UTDA')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTDA')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTDA')*7.95 | currency}}</td>
+			</tr>
+			
+			<tr>				
+				<td ng-click="optionFilter('WVHR', false, true, false, 'Hardy County, WV', true, false, false)"><a href="#">Hardy County, WV</a></td>
+				<td>{{count('WVHR')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVHR')*5 | currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVHR')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('MOGEN', false, true, false, 'Jackson County, MO', true, false, false)"><a href="#">Jackson County, MO</a></td>
+				<td>{{count('MOGEN')}}</td>
+				<!--<td>{{count('MOGEN') *24.95| currency}}</td>-->
+				<td>Completions</td>
+				<td>{{count('MOGEN')*22 | currency}}</td>
+				<td>$2.95</td>
+				<td>{{count('MOGEN')*2.95 | currency}}</td>
+			</tr>
+			
+			<tr>				
+				<td ng-click="optionFilter('WVMV', false, true, false, 'Mid-Ohio Valley, WV', true, false, false)"><a href="#">Mid-Ohio Valley, WV</a></td>
+				<td>{{count('WVMV')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVMV')*5 | currency}}</td>
+				<td>$4.95</td>
+				<td>{{count('WVMV')*4.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('WVMN', false, true, false, 'Monroe County, WV', true, false, false)"><a href="#">Monroe County, WV</a></td>
+				<td>{{count('WVMN')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVMN')*10 | currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVMN')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('akan', false, true, false, 'Municipality of Anchorage, AK', true, false, false)"><a href="#">Municipality of Anchorage, AK</a></td>
+				<td>{{count('akan')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('akan')*7.05 | currency}}</td>
+				<td>$2.95</td>
+				<td>{{count('akan')*2.95 | currency}}</td>
+			</tr>	
+			<tr>				
+				<td ng-click="optionFilter('WVPE', false, true, true, 'Pendleton County, WV', true, false, false)"><a href="#">Pendleton County, WV</a></td>
+				<td>{{count('WVPE')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{names|sumByKey:'CommissionWVPE'|currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVPE')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('WVPO', false, true, true, 'Pocahontas County, WV', true, false, false)"><a href="#">Pocahontas County, WV</a></td>
+				<td>{{count('WVPO')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{names|sumByKey:'CommissionWVPO'|currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVPO')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('WVRN', false, true, true, 'Randolph-Elkins County, WV', true, false, true)"><a href="#">Randolph-Elkins County, WV</a></td>
+				<td>{{count('WVRN')}}</td>
+				<td>Completions</td>
+				<td>{{names|sumByKey:'CommissionWVRN'|currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVRN')*9.95 | currency}}</td>
+			</tr>	
+
+			<tr>				
+				<td ng-click="optionFilter('FLGEN', false, true, false, 'Safefood Handlers - FL', false, false, false)"><a href="#">Safefood Handlers, FL - no print</a></td>
+				<td>{{count('FLGEN')}}</td>
+				<!--<td>{{count('FLGEN')*9.95 | currency}}</td>-->
+				<td>Completions</td>
+				<td>{{count('FLGEN')*2 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('FLGEN')*7.95 | currency}}</td>
+			</tr>	
+			<tr>				
+				<td ng-click="optionFilter('UTSL', false, true, false, 'Salt Lake Valley County, UT', true, true, false)"><a href="#">Salt Lake Valley County, UT</a></td>
+				<td>{{count('UTSL')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTSL')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTSL')*7.95 | currency}}</td>
+			</tr>
+			
+			<tr>				
+				<td ng-click="optionFilter('UTSE', false, true, false, 'Southeastern, UT', true, true, false)"><a href="#">Southeastern, UT</a></td>
+				<td>{{count('UTSE')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTSE')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTSE')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTSW', false, true, false, 'Southwest, UT', true, true, false)"><a href="#">Southwest, UT</a></td>
+				<td>{{count('UTSW')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTSW')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTSW')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTSU', false, true, false, 'Summit County, UT', true, true, false)"><a href="#">Summit County, UT</a></td>
+				<td>{{count('UTSU')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTSU')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTSU')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTTO', false, true, false, 'Tooele County, UT', true, true, false)"><a href="#">Tooele County, UT</a></td>
+				<td>{{count('UTTO')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTTO')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTTO')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTTC', false, true, false, 'TriCounty, UT', true, true, false)"><a href="#">TriCounty, UT</a></td>
+				<td>{{count('UTTC')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTTC')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTTC')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('WVUP', false, true, false, 'Upshur County, WV', true, false, false)"><a href="#">Upshur County, WV</a></td>
+				<td>{{count('WVUP')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVUP')*10 | currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVUP')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTUT', false, true, false, 'Utah County, UT', true, true, false)"><a href="#">Utah County, UT</a></td>
+				<td>{{count('UTUT')}}</td>
+				<!--<td>{{count('UTUT') *24.95| currency}}</td>-->
+				<td>Completions</td>
+				<td>{{count('UTUT')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTUT')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTWA', false, true, false, 'Wasatch County, UT', true, true, false)"><a href="#">Wasatch County, UT</a></td>
+				<td>{{count('UTWA')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTWA')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTWA')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('UTWM', false, true, false, 'Webber/Morgan County, UT', true, true, false)"><a href="#">Webber/Morgan County, UT</a></td>
+				<td>{{count('UTWM')}}</td>
+				<!--<td>NA</td>-->
+				<td>Completions</td>
+				<td>{{count('UTWM')*15 | currency}}</td>
+				<td>$7.95</td>
+				<td>{{count('UTWM')*7.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td ng-click="optionFilter('WVOH', false, true, false, 'Wheeling-Ohio County, WV', true, false, false)"><a href="#">Wheeling-Ohio County, WV</a></td>
+				<td>{{count('WVOH')}}</td>
+				<!--<td>NA</td>-->
+				<td>Enrollments</td>
+				<td>{{count('WVOH')*10 | currency}}</td>
+				<td>$9.95</td>
+				<td>{{count('WVOH')*9.95 | currency}}</td>
+			</tr>
+			<tr>				
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><!--<strong>{{count('WVBA')*10 + count('UTBR')*15 + count('CASD')*3 + count('UTCU')*15 + count('UTDA')*15 + count('WVHR')*5 + count('MOGEN')*22 + count('WVMV')*5 + count('WVMN')*10 + count('akan')*7.05 + names|sumByKey:'CommissionWVPE' + names|sumByKey:'CommissionWVPO' + names|sumByKey:'CommissionWVRN' + count('FLGEN')*2 + count('UTSL')*15 + count('UTSE')*15 + count('UTSW')*15 + count('UTSU')*15 + count('UTTO')*15 + count('UTTC')*15 + count('WVUP')*10 + count('UTUT')*15 + count('UTWA')*15 + count('UTWM')*15 + count('WVOH')*10 | currency }}</strong>--></td>
+				<td></td>
+				<td><strong>{{count('WVBA')*9.95 + count('UTBR')*7.95 + count('CASD')*3 + count('UTCU')*7.95 + count('UTDA')*7.95 + count('WVHR')*9.95 + count('MOGEN')*2.95 + count('WVMV')*4.95 + count('WVMN')*9.95 + count('akan')*2.95 + count('WVPE')*9.95 + count('WVPO')*9.95 + count('WVRN')*9.95 + count('FLGEN')*7.95 + count('UTSL')*7.95 + count('UTSE')*7.95 + count('UTSW')*7.95 + count('UTSU')*7.95 + count('UTTO')*7.95 + count('UTTC')*7.95 + count('WVUP')*9.95 + count('UTUT')*7.95 + count('UTWA')*7.95 + count('UTWM')*7.95 + count('WVOH')*9.95 | currency}}</strong></td>
+			</tr>
+			
+
+	</table>
+
+	<!--{{names|sumByKey:'CommissionWVPE' + names|sumByKey:'CommissionWVPO' + names|sumByKey:'CommissionWVRN'}}-->
+
+<!--<p style="font-size:20px; color:green;text-align:center">Number of trainings from all Regions {{JsonLength}}</p>-->
+<!--<input style="margin-left:20px" ng-model="globalSearch" placeholder="SEARCH">&nbsp;<span class="glyphicon glyphicon-search"></span>-->
+
+
+<div id="subTable" ng-show="resultsTable"> 
+
+<p style="text-align:center">{{regionName}}</p>
+
+	<table  class="table table-hover" style="width:800px; margin:auto" >
+			<tr>
+				<th>Index</th>
+				<th>Last Name</th>
+				<th>First Name</th>
+				<th>Username</th>
+				<th>Date Added </th>
+				<th>Date Ended </th>
+				<!--<th>Region </th>-->
+				<th>Address </th>
+				<th>City </th>
+				<th>State </th>
+				<th>Zip Code </th>
+				<th>Phone</th>
+				<th>Birthdate</th>
+				<th ng-show="GenderColumn">Gender</th>
+				<th ng-show="FloridaColumn">Company</th>
+				<th ng-show="priceColumn">Price </th>
+				<th ng-show="priceColumn">Commission </th>
+				<th ng-show="CardType">Card Type </th>
+								
+				<!--<th># of trainings </th>-->
+				
+
+			</tr>
+
+
+			<!--<tr ng-repeat="s in names | orderBy:mainOrder | unique:'CompanyName'| filter: globalSearch" ng-show="true">-->
+			<tr ng-repeat="s in names | filter: {Region:regionFilter}">
+				<td>{{ $index +1}}</td>
+				<td>{{ s.LastName}}</td>
+				<td>{{ s.FirstName}}</td>
+				<td>{{ s.Username}}</td>
+				<td>{{ s.DateAdded}}</td>
+				<td>{{ s.DateEnded}}</td>
+				<!--<td>{{s.Region}}</td>-->
+				<td>{{s.Address}}</td>
+				<td>{{s.City}}</td>
+				<td>{{s.State}}</td>			
+				<td>{{s.ZipCode}}</td>
+				<td>{{s.Phone}}</td>
+				<td>{{s.Birthdate}}</td>
+				<td ng-show="GenderColumn">{{s.Gender}}</td>
+				<td ng-show="FloridaColumn">{{s.Company}}</td>
+				<td ng-show="priceColumn">{{s.Price | currency}}</td>
+				<td ng-show="priceColumn">{{s.Commission | currency}}</td>
+				<td ng-show="CardType">{{s.cardtype}}</td>
+				
+				<!--<td style="text-align:center"><b>{{count(s.Region)}}</b></td>-->
+			</tr>
+			
+
+	</table>
+
+	<br>
+<p style="text-align:center" id="gobackbtn"><button class="btn btn-info" ng-click="goBack(true, false)" id="btnGB">Go Back</button></p>
+<p style="text-align:center" id="printpagebtn"><button class="btn btn-info" onclick="PrintPage()" >Print Page</button></p>
+
+
+</div>
+<br>
+<p style="text-align:center" id="changedatesbtn"><button ng-show="mainTable" class="btn btn-info" onclick="location.href='index.html'"><b>Change Dates</b></button></p>
+
+
+<!--<a href="#top">Go to top</a>-->
+</body>
+</html>

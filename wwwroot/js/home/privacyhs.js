@@ -1,0 +1,2 @@
+$(".english").hide();
+$(".spanish").show();

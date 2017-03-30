@@ -1,0 +1,182 @@
+<html>
+<head>
+	<title>DEPOSIT REPORT</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+	body *{
+	font-size:10px;
+	}
+	table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 2px;
+  max-width: 170px;
+  overflow: auto;
+  font-size:11px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #E0FFFF;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+    background-color: yellow;
+}
+
+
+
+.price-red {
+   
+    background-color: red;
+}
+	</style>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="scripts/results.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="customersCtrl">
+<h1 align="center">DEPOSIT REPORT</h1>
+{{JsonLength}}
+
+<p style="text-align:center">Report Date: <span style="color:red">{{names[0].Date | deleteHour| date:'MM/dd/yyyy'}} </span> - <span style="color:red"> {{names[names.length - 1].Date| deleteHour| date:'MM/dd/yyyy'}}</span> </p>
+
+<p style="text-align:center"><input style="margin-left:20px" ng-model="globalSearch.Amount" placeholder="SEARCH">&nbsp;<span class="glyphicon glyphicon-search"></span></p>
+
+
+
+<div id="subTable"> 
+<table ng-show="true" class="table table-hover" style="width:800px; margin:auto">
+<tr>
+<th>Index</th>
+<th>Date</th>
+<th>Invoice</th>
+<th>Amount</th>
+<th>Vendor Name</th>
+<th>Company Name</th>
+<th>Payment</th>
+<th>FSM</th>
+<th>CA</th>
+<th>CASD</th>
+<th>TX</th>
+<th>FL</th>
+<th>IL</th>
+<th>MO</th>
+<th>AZ</th>
+<th>FSRE</th>
+<th>UT</th>
+<th>HACCP</th>
+<th>FSH</th>
+<th>OH</th>
+<th>WV</th>
+<th>KS</th>
+<th>CB</th>
+<th>AA</th>
+<th>AD</th>
+<th>APS</th>
+<th>EMWS</th>
+<th>RTFSM</th>
+<th>SFIS</th>
+<th>NM</th>
+<th>Retail</th>
+<th>ifl</th>
+<th>cf</th>
+<th>rewi</th>
+<th>vaccfsh</th>
+<th>tufsh</th>
+
+
+</tr>
+
+
+	<tr ng-repeat="s in names | orderBy:'-Amount' |filter: globalSearch" ng-show="true" >
+	<td>{{ $index +1}}</td>
+	<td>{{ s.Date}}</td>
+	<td>{{ s.Invoice | deleteTAP}}</td>
+	<td ng-style="set_color(s)">{{ s.Amount |currency}}</td>
+    <td>{{ s.VendorName }}</td>
+ 	<td>{{ s.CompanyName}}</td>
+ 	<td ng-style="set_color(s)">{{ s.Payment}}</td>
+	<td>{{s.FSM | currency}}</td>
+	<td>{{s.CA | currency}}</td>
+	<td>{{s.CASD | currency}}</td>
+	<td>{{s.TX | currency}}</td>
+	<td>{{s.FL | currency}}</td>
+	<td>{{s.IL | currency}}</td>
+	<td>{{s.MO | currency}}</td>
+	<td>{{s.AZ | currency}}</td>
+	<td>{{s.FSRE | currency}}</td>
+	<td>{{s.UT | currency}}</td>
+	<td>{{s.HACCP | currency}}</td>
+	<td>{{s.FSH | currency}}</td>
+	<td>{{s.OH | currency}}</td>
+	<td>{{s.WVFSH | currency}}</td>
+	<td>{{s.ksfsh | currency}}</td>
+	<td>{{s.cb | currency}}</td>
+	<td>{{s.aa | currency}}</td>
+	<td>{{s.ad | currency}}</td>
+	<td>{{s.as | currency}}</td>
+	<td>{{s.emws | currency}}</td>
+	<td>{{s.rtfsm | currency}}</td>
+	<td>{{s.sfis | currency}}</td>
+	<td>{{s.nmfsh | currency}}</td>
+	<td>{{s.fsrt | currency}}</td>
+	<td>{{s.ifl | currency}}</td>
+	<td>{{s.cf | currency}}</td>
+	<td>{{s.rewi | currency}}</td>
+	<td>{{s.vaccfsh | currency}}</td>
+	<td>{{s.tufsh | currency}}</td>
+	 
+	</tr>
+	
+	<tr>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th>{{names|sumByKey:'Amount'|currency}}</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th>{{names|sumByKey:'FSM'|currency}}</th>
+	<th>{{names|sumByKey:'CA'|currency}}</th>
+	<th>{{names|sumByKey:'CASD'|currency}}</th>
+	<th>{{names|sumByKey:'TX'|currency}}</th>
+	<th>{{names|sumByKey:'FL'|currency}}</th>
+	<th>{{names|sumByKey:'IL'|currency}}</th>
+	<th>{{names|sumByKey:'MO'|currency}}</th>
+	<th>{{names|sumByKey:'AZ'|currency}}</th>
+	<th>{{names|sumByKey:'FSRE'|currency}}</th>
+	<th>{{names|sumByKey:'UT'|currency}}</th>
+	<th>{{names|sumByKey:'HACCP'|currency}}</th>
+	<th>{{names|sumByKey:'FSH'|currency}}</th>
+	<th>{{names|sumByKey:'OH'|currency}}</th>
+	<th>{{names|sumByKey:'WVFSH'|currency}}</th>
+	<th>{{names|sumByKey:'ksfsh'|currency}}</th>
+	<th>{{names|sumByKey:'cb'|currency}}</th>
+	<th>{{names|sumByKey:'aa'|currency}}</th>
+	<th>{{names|sumByKey:'ad'|currency}}</th>
+	<th>{{names|sumByKey:'as'|currency}}</th>
+	<th>{{names|sumByKey:'emws'|currency}}</th>
+	<th>{{names|sumByKey:'rtfsm'|currency}}</th>
+	<th>{{names|sumByKey:'sfis'|currency}}</th>
+	<th>{{names|sumByKey:'nmfsh'|currency}}</th>
+	<th>{{names|sumByKey:'fsrt'|currency}}</th>
+	<th>{{names|sumByKey:'ifl'|currency}}</th>
+	<th>{{names|sumByKey:'cf'|currency}}</th>
+	<th>{{names|sumByKey:'rewi'|currency}}</th>
+	<th>{{names|sumByKey:'vaccfsh'|currency}}</th>
+	<th>{{names|sumByKey:'tufsh'|currency}}</th>
+
+	
+	</tr>
+
+	
+</table>
+
+</div>
+
+<a href="#top" style="font-size:10px;font-weight:bold">Go to top</a>
+</body>
+</html>

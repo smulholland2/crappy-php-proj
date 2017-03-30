@@ -1,0 +1,80 @@
+.student-table tr, .student-table p{
+    height:20px;
+    max-height:20px;
+}
+td:first-child {
+    width: 20px;
+}
+td p{
+    font-size:12px;
+}
+.firstname{
+    width: 85;
+}
+.lastname{
+    width: 85;
+}
+.username{
+    width: 140px;
+}
+.email{
+    width: 140px;
+}
+.adminemail{
+    width: 140px;
+}
+.password{
+    width: 100px;
+}
+.lang{
+    width:85px;
+}
+.firstname p,.firstname input, .fnhead{
+    width:80px;
+    max-width:80px;
+}
+.lastname p,.lastname input, .lnhead{
+    width:80px;
+    max-width:80px;
+}
+.email p,.email input, .uehead{
+    width:135px;
+    max-width:135px;
+}
+.adminemail p,.adminemail input, .aehead{
+    width:135px;
+    max-width:135px;
+}
+.username p,.username input, .unhead{
+    width:135px;
+    max-width:135px;
+}
+.password p,.password input, .pwhead{
+    width:80px;
+    max-width:80px;
+}
+.lang p,.lang input, .lnhead{
+    width:80px;
+    max-width:80px;
+}
+.firstname input{
+    padding-bottom:0;
+}
+.lastname input{
+    padding-bottom:0;
+}
+.email input{
+    padding-bottom:0;
+}
+.adminemail input{
+    padding-bottom:0;
+}
+.username input{
+    padding-bottom:0;
+}
+.password input{
+    padding-bottom:0;
+}
+.lang input{
+    padding-bottom:0;
+}

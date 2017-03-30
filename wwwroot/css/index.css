@@ -1,0 +1,634 @@
+/* Style sheet for index.php */
+
+/****************************
+ *     STYLES.CSS OVERRIDE
+ *     ****************************/
+body {
+    background-image: url('/wwwroot/images/staff.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 900px;
+    background-position: 0px 65px;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+a {
+    color: white;
+}
+#wrapper {
+    width: 101%;
+    height: auto;
+    border: 1px solid transparent;
+    margin: 0 0 0 -10px;    
+}
+
+/****************************
+ *     INDEX.PHP SPECIFIC
+ *     ****************************/
+#buttonsbox {
+    width: 1000px;
+    height: 100px;
+    border: 1px solid transparent;
+    margin: 140px auto;
+}
+.buttons {
+    width: 300px;
+    height: 70px;
+    float: left;
+    margin-left: 20px;
+    border: 3px solid #1E2B41;
+    border-radius: 0px;
+    color: #1E2B41;
+    background-color: transparent;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.buttons:hover {
+    background-color: #1E2B41;
+    color: white;
+    border-color: transparent;
+}
+.buttons p {
+    margin-top: 15px
+}
+
+/****************************
+ *     OUR COURSES
+ *     ****************************/
+.course {
+    width: 450px;
+    height: 100px;
+    border: 3px solid white;
+    float: left;
+    margin-left: 20px;
+    background-color: #1E2B41;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.course:hover {
+    border-color: #1E2B41;
+    color: #1E2B41;
+    background-color: white;
+}
+.coursesbox {
+    width: 960px;
+    height: 110px;
+    border: 1px solid transparent;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.course p {
+    margin-top: 30px;
+}
+#our_courses {
+    width: 100%;
+    height: 800px;
+    margin-top: 730px;
+    border: 1px solid transparent;
+    background-image: url('/wwwroot/images/coursesbg.jpg');
+    background-repeat: no-repeat;
+    background-size: 1920px 800px;
+    overflow: hidden;
+}
+#our_courses h1 {
+    margin-top: 120px;
+    font-size: 30px;
+    margin-left: 430px;
+    font-weight: bold;
+    color: white;
+}
+/****************************
+ *     TESTIMONIALS
+ *     ****************************/
+#testimonies {
+    width: 100%;
+    height: 300px;
+    background-color: #1E2B41;
+    text-align: center;
+    border: 1px solid #1E2B41;
+    color: white;
+}
+#testimonies p {
+    font-size: 25px;
+}
+#myGallery {
+    font-style: italic;
+    font-weight: normal;
+}
+/****************************
+ *     MOBILEF
+ *     ****************************/
+#mobilef {
+    width: 100%;
+    height: 1000px;
+    background-image: url('/wwwroot/images/friends.jpg');
+    background-repeat: no-repeat;
+    background-size: 1920px 1000px;
+    border: 1px solid transparent;
+    position: relative;
+}
+#mobilef_txt {
+    max-width: 750px;
+    height: 100px;
+    border: 1px solid transparent;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+#mobilef_txt p {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.bottom-text {
+    position:absolute;
+    bottom:0;
+    right:0;
+    color:black;
+}
+
+/****************************
+ *     ACCREDITATIONS
+ *     ****************************/
+#accreditations {
+    width: 100%;
+    height: 300px;
+    background-color: #1E2B41;
+    text-align: center;
+    border: 1px solid #1E2B41;
+    color: white;
+    overflow: hidden;
+}
+#accredimages {
+    width: 690px;
+    height: 210px;
+    border: 1px solid transparent;
+    margin: 50px auto;
+}
+#ansiimg {
+    width: 197px;
+    height: 200px;
+    border: 1px solid transparent;
+    float: left;
+    background-image: url('/wwwroot/images/ansi2.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 20px;
+}
+#haccpimg {
+    width: 200px;
+    height: 200px;
+    border: 1px solid transparent;
+    float: left;
+    margin-left: 40px;
+    background-image: url('/wwwroot/images/haccp.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#jcimg {
+    width: 200px;
+    height: 200px;
+    border: 1px solid transparent;
+    float: left;
+    margin-left: 40px;
+    background-image: url('/wwwroot/images/jc2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 20px;
+}
+/****************************
+ *     WORLDD
+ *     ****************************/
+#worldd {
+    width: 100%;
+    height: 1000px;
+    background-image: url('/wwwroot/images/international2.jpg');
+    background-repeat: no-repeat;
+    background-size: 1920px 1044px;
+    border: 1px solid transparent;
+    border-top: 1px solid #1E2B41;
+    position: relative;
+    background-position:180%
+}
+.info-text {
+    font-size: 20px;
+    padding: 10px;
+    line-height:1.42857143;
+    color: black;
+    position: absolute;
+    background: white;
+    right: 0;
+    width: 45%;
+    top: 0;
+    bottom: -1px;
+}
+.info-text h1 {
+    font-size: 20px;
+    margin-bottom:25px;
+    border-bottom: 1px groove #1E2B41;
+}
+.info-text li {
+    margin-bottom:25px;
+}
+.info-text .course {
+    width: 90% !important;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+/****************************
+ *     OUR CLIENTS
+ *     ****************************/
+#our_clients {
+    width: 100%;
+    height: 360px;
+    background-color: white;
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+#clientsbox2 {
+    max-width: 1280px;
+    height: 300px;
+    border: 1px solid transparent;
+    margin: -30px auto;
+}
+#clientsbox {
+    max-width: 1330px;
+    height: 300px;
+    border: 1px solid transparent;
+    margin: 60px auto;
+}
+.clients {
+    width: 200px;
+    height: 200px;
+    border: 1px solid transparent;
+    float: left;
+    margin-left: 15px;
+}
+.carousel-control.left {
+    background-image: none;
+}
+.carousel-control.right {
+    background-image: none;
+}
+#our_clients p {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+}
+/****************************
+ *     MEDIA QUERIES
+ *     ****************************/
+@media only screen and (max-width: 1600px) {
+    body {
+        background-size: 100% 700px;
+    }
+    #our_courses {
+        margin-top: 540px;
+    }
+    #text_mobile_friendly {
+        width: 600px;
+    }
+    #mobile {
+        height: 800px;
+    }
+    #buttonsbox {
+        margin: 115px auto;
+    }
+    nav span {
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 1320px) {
+    #our_clients {
+        height: 328px;
+    }
+    #mobfriendly {
+        width: 550px;
+    }
+    #mobile {
+        height: auto;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    body {
+        background-size: 100% 550px;
+    }
+    #our_courses {
+        margin-top: 410px;
+        height: 650px;
+    }
+    #clientsbox {
+        width: 700px;
+        height: 620px;
+    }
+    #br2,
+    #br3,
+    #br4,
+    #br6,
+    #br7,
+    #br8,
+    #br10,
+    #br11,
+    #br12 {
+        display: none;
+    }
+    #our_clients p {
+        font-size: 18px;
+    }
+    /*#buttonsbox{
+ * 		display: none;
+ * 			}*/
+    
+    #mobfriendly {
+        width: 100%;
+        margin: auto;
+        background-position: center;
+    }
+    #text_mobile_friendly {
+        width: 100%;
+        margin: auto;
+    }
+    #text_mobile_friendly p {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #worldd {
+        background-size: 1250px 844px;
+        height: 844px;
+    }
+    #mobilef {
+        background-size: 1250px 844px;
+        height: 844px;
+    }
+    .buttons {
+        width: 200px;
+        height: 60px;
+    }
+    #buttonsbox {
+        max-width: 680px;
+        height: 100px;
+        border: 1px solid transparent;
+        margin: 100px auto !important;
+    }
+    .buttons p {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    nav {
+        margin-top: 26px;
+    }
+    nav span {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    nav {
+        display: none;
+    }
+    #menubtn {
+        display: block;
+    }
+    #userbtn {
+        display: block;
+    }
+    #footeropt {
+        height: 430px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .coursesbox {
+        width: 450px;
+        margin: auto;
+    }
+    #our_courses {
+        height: 850px;
+        margin-top: 460px;
+        width: 103%;
+        background-size: 1920px 850px;
+    }
+    #testimonies {
+        width: 103%;
+    }
+    #mobilef {
+        width: 103%;
+        background-size: 920px 644px;
+        height: 644px;
+    }
+    #accreditations {
+        width: 103%;
+    }
+    #worldd {
+        width: 103%;
+        background-size: 920px 644px;
+        height: 644px;
+    }
+    #our_clients {
+        width: 103%;
+    }
+    footer {
+        width: 103%;
+    }
+    #our_courses h1 {
+        margin-top: 50px;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .course {
+        margin-top: 15px;
+        margin: 10px auto;
+        border-color: black;
+    }
+    body {
+        background-image: url('/wwwroot/images/staff2.jpg');
+        background-repeat: no-repeat;
+	background-size: 100% 600px;
+    }
+    #mobilef_txt {
+        max-width: 550px;
+    }
+    #mobilef_txt p {
+        font-size: 25px;
+    }
+    .info-text {
+        position:relative;
+        padding: 0 40px;
+        width:100%;
+        font-size: 14px;
+    }
+    .info-text h1 {
+        margin-bottom:10px;
+    }
+    .info-text li {
+        margin-bottom:15px; 
+    }
+    .info-text .course {
+        display:none;
+    }
+}
+@media only screen and (max-width: 700px) {
+    #footeropt {
+        height: 750px;
+    }
+    #accredimages {
+        max-width: 490px;
+        height: 170px;
+        margin: 50px auto;
+    }
+    #ansiimg {
+        width: 150px;
+        height: 150px;
+    }
+    #haccpimg {
+        width: 150px;
+        height: 150px;
+        margin-left: 10px;
+    }
+    #jcimg {
+        width: 150px;
+        height: 150px;
+        margin-left: 10px;
+    }
+    #accreditations {
+        height: 250px;
+    }
+    .buttons {
+        width: 70%;
+        height: 60px;
+        margin: 10px auto;
+        float: none;
+        border: 3px solid #1E2B41;
+        color: white;
+        background-color: #1E2B41;
+        border-radius: 3px;
+    }
+    #buttonsbox {
+        max-width: 680px;
+        height: 235px;
+        margin: 80px auto;
+    }
+    #our_courses {
+        margin-top: 310px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #br1,
+    #br2,
+    #br3,
+    #br4,
+    #br5,
+    #br6,
+    #br7,
+    #br8,
+    #br9,
+    #br10,
+    #br11,
+    #br12 {
+        display: none;
+    }
+    .clients {
+        width: 140px;
+        height: 140px;
+        border: 1px solid transparent;
+        float: left;
+        margin-left: 20px;
+    }
+    #buttonsbox {
+        width: 103%;
+        height: 220px;
+        margin: 175% auto;
+        display: none;
+    }
+    .buttons {
+        width: 91%;
+        height: 75px;
+        margin: 5px auto;
+        float: none;
+        border: 3px solid #1E2B41;
+        color: white;
+        background-color: #1E2B41;
+        border-radius: 3px;
+    }
+    body {
+        background-image: url('/wwwroot/images/staff3.jpg');
+        background-size:100%;
+    }
+    #our_courses {
+        margin-top: 800px;
+    }
+    #worldd {
+        background-size: 620px 444px;
+        height: 444px;
+    }
+    #mobilef {
+        background-size: 620px 444px;
+        height: 444px;
+    }
+    #mobilef_txt {
+        max-width: 350px;
+        margin: 15px 0px 0px 15px;
+    }
+    #mobilef_txt p {
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #accredimages {
+        width: 270px;
+        height: 270px;
+        margin: 50px auto;
+    }
+    #ansiimg {
+        width: 130px;
+        height: 130px;
+    }
+    #haccpimg {
+        width: 130px;
+        height: 130px;
+        margin-left: 5px;
+    }
+    #jcimg {
+        width: 130px;
+        height: 130px;
+        margin-left: 80px;
+        margin-top: 5px;
+    }
+    #accreditations {
+        height: 360px;
+    }
+    .course {
+        width: 300px;
+        font-size: 24px;
+    }
+    .course .fso {
+        font-size:20px;
+    }
+    .coursesbox {
+        width: 300px;
+        margin: auto;
+    }
+    #our_courses {
+        margin-top: 650px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #logo {
+        font-size: 30px;
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+    #our_courses {
+        margin-top: 600px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    #our_courses {
+        margin-top: 540px;
+    }
+}
+

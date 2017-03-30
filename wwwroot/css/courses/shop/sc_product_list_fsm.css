@@ -1,0 +1,172 @@
+.course_container{
+	width: 375px;
+	height: 200px;
+	border:1px solid #ddd;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#wrapper{
+	border:1px solid transparent;
+	max-width: 785px;
+	height: 700px;
+	margin: auto;
+}
+.image{
+	width: 167px;
+	height: 167px;
+	float: left;
+	margin-top: 13px;
+	margin-left: 13px;
+	border:1px solid transparent;
+	position:relative;
+	
+}
+.image:hover img{
+	opacity: 0.5;
+}
+.image:hover .btns{
+    display:block;
+}
+.content{
+	width: 167px;
+	height: 167px;
+	float: left;
+	margin-top: 13px;
+	margin-left: 13px;
+	border:1px solid transparent;
+}
+img{
+	transition: opacity 0.5s ease;
+	width: 100%;
+}
+.title{
+	width: 100%;
+	height: 70%;
+	border:1px solid transparent;
+	text-align: center;
+	color: #1E2B41;
+}
+.title h4{
+	margin-top: 0px;
+	font-size: 19px;
+	cursor: pointer;
+}
+.title h4 a:hover{
+	color:blue;
+}
+.title h4 a{
+    color:#1E2B41;
+	transition: all 1s;    
+}
+
+.price{
+	width: 100%;
+	height: 30%;
+	border:1px solid transparent;
+	background-color: #1E2B41;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+.price:hover{
+	background-color:#182234;
+}
+.price h4{
+	margin-top: 10px;
+	font-size: 25px;
+}
+.price a{
+    color:white;
+    text-decoration:none;
+}
+.content a:hover{
+    text-decoration:none;
+}
+.btns{
+    display:none;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height:50%;
+    text-align: center;
+}
+.btns a{
+	margin-top: 5px;
+}
+.btn-primary{
+    background-color: #1E2B41;
+    border-color: #1E2B41;
+}
+
+@media only screen and (max-width: 790px) {
+
+.course_container{
+    width: 100%;
+    margin:10px auto;
+    height: 258px;
+    }
+#wrapper{
+	width: 500px;
+	height: 1700px;
+}
+.image{
+	margin-left:25px;
+	margin-top:20px;
+	width: 45%;
+	height: 87%;
+}
+.content{
+	margin-top:20px;
+	width: 45%;
+	height: 87%;
+}
+.title{
+	height: 70%;
+}
+.title h4{
+	font-size: 25px;
+	margin-top: 10px;
+}
+.price{
+	height: 30%;
+}
+.price h4{
+	margin-top: 15px;
+	font-size: 30px;
+}
+
+
+}	
+
+@media only screen and (max-width: 525px) {
+
+#wrapper{
+	width: 300px;
+    height: 1100px;
+}
+.course_container{
+	height: 155px;
+}
+.content{
+	margin-top: 10px;
+	height: 132px;
+}
+.image{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+.title h4{
+	font-size: 15.5px;
+	margin-top: 0px;
+}
+.price h4{
+	margin-top: 7px;
+	font-size: 20px;
+}
+
+}

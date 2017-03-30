@@ -1,0 +1,27 @@
+.form-inline {
+}
+.form-inline .long-field {
+    width: 80%;
+    margin: 0 15px 15px 0;
+}
+.form-inline .long-field input {
+    width: 100%;
+}
+.sfis-control {    
+    
+}
+.questions {
+    margin:5px 0;
+}
+.tab-pane {
+    margin-top:15px;
+}
+form.scroll-form {
+    border-bottom: 1px solid rgba(30, 43, 65,0.2);
+    overflow-y: scroll;
+    height: 300px;
+}
+.module-select {
+    color: white;
+    background: #1E2B41;
+}

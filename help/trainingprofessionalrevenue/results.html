@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>Training Professional Revenue</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="scripts/results.js"></script>
+
+<style>
+body *{
+	font-size:10px;
+}
+	
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 2px;
+  max-width: 170px;
+  overflow: auto;
+}
+
+table tr:nth-child(odd) {
+  background-color: #E0FFFF;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+    background-color: yellow;
+}
+</style>
+</head>
+
+
+
+
+
+<body ng-app="myApp" ng-controller="customersCtrl">
+
+<br>
+
+<h1 style="text-align:center">Training Professional Revenue</h1>
+
+<p style="text-align:center">Report Date:  <span style="color:red">{{names[0].StartDate}}</span> - <span style="color:red">{{names[0].EndDate}}</span> </p><!--<span style="color:green">{{JsonLength}}</span>-->
+
+
+<p style="text-align:center"><input style="margin-left:20px" ng-model="globalSearch" placeholder="SEARCH">&nbsp;<span class="glyphicon glyphicon-search"></span></p>
+
+<div id="subTable"> 
+<table ng-show="true" class="table table-hover" style="width:800px; margin:auto">
+<tr>
+<th>Index</th>
+<th>Course Number</th>
+<th>Company Name <button class="glyphicon glyphicon-sort-by-alphabet" ng-click="optionOrder('CompanyName')"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="glyphicon glyphicon-sort-by-alphabet-alt" ng-click="optionOrder('-CompanyName')"></button></th>
+<th>Contact Name <br><button class="glyphicon glyphicon-sort-by-alphabet" ng-click="optionOrder('ContactName')"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="glyphicon glyphicon-sort-by-alphabet-alt" ng-click="optionOrder('-ContactName')"></button></th>
+<th>Pay To <br><button class="glyphicon glyphicon-sort-by-alphabet" ng-click="optionOrder('PayTo')"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="glyphicon glyphicon-sort-by-alphabet-alt" ng-click="optionOrder('-PayTo')"></button></th>
+<th>Link</th>
+<th>TP User Name</th>
+<th>Password</th>
+<th>Revenue Share</th>
+<th># of Trainings</th>
+<th>TOTAL</th>
+<th>REP</th>
+<th>TP Number</th>
+<th>Type</th>
+<th>Data</th>
+</tr>
+
+
+	<tr ng-repeat="s in names | orderBy:mainOrder | unique:'CompanyName'| orderBy:'PayTo' |filter: globalSearch" ng-show="true">
+	<td>{{ $index +1}}</td>
+	<td>{{ s.CourseNum}}</td>
+	<td>{{ s.CompanyName}}</td>
+	<td>{{ s.ContactName}}</td>
+    <td>{{ s.PayTo }}</td>
+ 	<td>{{ s.Link }}</td>
+ 	<td>{{ s.TPUserName}}</td>
+    <td>{{ s.Password }}</td>
+	<td>{{ s.RevenueShare | currency}}</td>
+	<td>{{count2(s.CompanyName)}}</td>
+	<td>{{count2(s.CompanyName) * s.RevenueShare | currency}}</td>
+    <td>{{ s.Rep}}</td>
+	<td>{{ s.TPNumber }}</td>
+    <td>{{ s.type}}</td>
+	<td>{{ s.Data}}</td>
+	</tr>
+	
+
+</table>
+
+</div>
+
+
+<a href="#top">Go to top</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.coursesbox {
+    border: 1px solid transparent;
+}
+.course {
+    border: 3px solid white;    
+    background-color: #1E2B41;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.course:hover {
+    border: 3px solid #1E2B41;    
+    background-color: white;
+    border-radius: 5px;
+    color: #1E2B41;
+}
+.course p {
+	margin-top: 30px;
+}
